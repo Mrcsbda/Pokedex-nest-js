@@ -23,9 +23,9 @@ export class PokemonController {
     return this.pokemonService.findOne(searchTerm);
   }
 
-  @Patch(':id')
-  update(@Param('id') id: string, @Body() updatePokemonDto: UpdatePokemonDto) {
-    return this.pokemonService.update(+id, updatePokemonDto);
+  @Patch(':searchTerm')
+  update(@Param('searchTerm') searchTerm: string, @Body() updatePokemonDto: UpdatePokemonDto) {
+    return this.pokemonService.update(searchTerm, updatePokemonDto);
   }
 
   @Delete(':id')
